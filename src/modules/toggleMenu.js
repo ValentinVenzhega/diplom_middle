@@ -1,9 +1,12 @@
 const toggleMenu = () => {
    const popupMenu = document.querySelector('.popup-menu'),
    menuBtn = document.querySelector('.menu-button'),
+   topMenu = document.querySelector('.top-menu'),
 
-   positionStart = menuBtn.offsetTop,
+   positionStart = topMenu.offsetTop,
    myStyle = document.querySelector('#my-style');
+
+   // console.log(wrapper);
 
    // открытие закрытие меню
    window.addEventListener('click', (event) => {
@@ -28,22 +31,16 @@ const toggleMenu = () => {
             right: 14px;
             z-index: 300;
          }
-         .top-menu {
-            paddin-top: 1px;
-            height: 59px;
-         }
-         .position + .popup-menu + .head-slider {
-            padding-top: 60px;
-         }
+
       `;
       document.head.appendChild(style);
    }
 
    window.addEventListener('scroll', (event) => {
       if (window.pageYOffset > positionStart) {
-         menuBtn.classList.add("position");
+         topMenu.classList.add("position");
       } else {
-         menuBtn.classList.remove("position");
+         topMenu.classList.remove("position");
       }
    });
 };
