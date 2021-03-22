@@ -6,8 +6,6 @@ const toggleMenu = () => {
    positionStart = topMenu.offsetTop,
    myStyle = document.querySelector('#my-style');
 
-   // console.log(wrapper);
-
    // открытие закрытие меню
    window.addEventListener('click', (event) => {
       const target = event.target;
@@ -31,7 +29,6 @@ const toggleMenu = () => {
             right: 14px;
             z-index: 300;
          }
-
       `;
       document.head.appendChild(style);
    }
