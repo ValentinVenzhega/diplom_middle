@@ -1,5 +1,6 @@
 const togglePopup = () =>  {
-   const freeVisitForm = document.querySelector('#free_visit_form'),
+   const fixedGift = document.querySelector('.fixed-gift'),
+      freeVisitForm = document.querySelector('#free_visit_form'),
       callbackForm = document.querySelector('#callback_form'),
       giftModal = document.querySelector('#gift');
    
@@ -27,6 +28,7 @@ const togglePopup = () =>  {
       // подарок
       if (target.closest('.fixed-gift')) {
          giftModal.style.display = 'block';
+         fixedGift.style.display = 'none';
       } else if (target.closest('#gift>.close_icon')) {
          giftModal.style.display = 'none';
       } else if (target.closest('.close-btn')) {
