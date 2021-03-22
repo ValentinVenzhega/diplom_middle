@@ -26,7 +26,7 @@ const toggleMenu = () => {
             position: fixed;
             top:0;
             right: 14px;
-            z-index: 6000;
+            z-index: 300;
          }
          .top-menu {
             paddin-top: 1px;
