@@ -1,6 +1,6 @@
 const choiceClub = () =>  {
-   const clubSelect = document.querySelector('.club-select');
-   const listClub = clubSelect.querySelector('ul');   
+   const clubSelect = document.querySelector('.club-select'),
+      listClub = clubSelect.querySelector('ul');   
    
    window.addEventListener('click', (event) => {
       const target = event.target;

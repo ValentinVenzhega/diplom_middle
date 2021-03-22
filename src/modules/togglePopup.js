@@ -1,9 +1,5 @@
 const togglePopup = () =>  {
-   const popupVisit = document.querySelector('.open-popup'),
-      callbackBtn = document.querySelector('.callback-btn'),
-      fixedGift = document.querySelector('.fixed-gift'),
-
-      freeVisitForm = document.querySelector('#free_visit_form'),
+   const freeVisitForm = document.querySelector('#free_visit_form'),
       callbackForm = document.querySelector('#callback_form'),
       giftModal = document.querySelector('#gift');
    
@@ -13,7 +9,6 @@ const togglePopup = () =>  {
       // записаться на визит
       if (target.closest('.open-popup')) {
          freeVisitForm.style.display = 'block';
-
       } else if (target.closest('.close-form')) {
          freeVisitForm.style.display = 'none';
       } else if (!target.closest('#form2')) {
