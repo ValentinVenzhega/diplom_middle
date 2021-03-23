@@ -7,6 +7,10 @@ import validForm from './modules/validForm';
 import scrollBlock from './modules/scrollBlock';
 // import sendForm from './modules/sendForm';
 import mainSlider from './modules/mainSlider';
+import gallerySlider from './modules/gallerySlider';
+import servicesSlider from './modules/servicesSlider';
+
+
 
 
 // выбор клуба
@@ -29,3 +33,9 @@ scrollBlock();
 
 // главнй слайдер
 mainSlider();
+
+// слайдер галереи
+gallerySlider();
+
+// слайдер услуг
+servicesSlider();
