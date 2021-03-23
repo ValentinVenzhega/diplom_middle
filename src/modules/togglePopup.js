@@ -2,7 +2,8 @@ const togglePopup = () =>  {
    const fixedGift = document.querySelector('.fixed-gift'),
       freeVisitForm = document.querySelector('#free_visit_form'),
       callbackForm = document.querySelector('#callback_form'),
-      giftModal = document.querySelector('#gift');
+      giftModal = document.querySelector('#gift'),
+      thanks = document.getElementById('thanks');
    
    window.addEventListener('click', (event) => {
       const target = event.target;
@@ -35,6 +36,15 @@ const togglePopup = () =>  {
          giftModal.style.display = 'none';
       } else if (!target.closest('.form-content')) {
          giftModal.style.display = 'none';
+      }
+
+      // спасибо за заявку
+      if (target.closest('#thanks .sloce-icon')) {
+         thanks.style.display = 'none';
+      }else if (!target.closest('#thanks .form-content')) {
+         thanks.style.display = 'none';
+      } else if (target.closest('#thanks .close-btn')) {
+         thanks.style.display = 'none';
       }
    });
 

@@ -5,6 +5,9 @@ import togglePopup from './modules/togglePopup';
 import toggleMenu from './modules/toggleMenu';
 import validForm from './modules/validForm';
 import scrollBlock from './modules/scrollBlock';
+// import sendForm from './modules/sendForm';
+import mainSlider from './modules/mainSlider';
+
 
 // выбор клуба
 choiceClub();
@@ -20,3 +23,9 @@ validForm();
 
 // cкрол стрелки вверх
 scrollBlock();
+
+// отправка форм
+// sendForm();
+
+// главнй слайдер
+mainSlider();
