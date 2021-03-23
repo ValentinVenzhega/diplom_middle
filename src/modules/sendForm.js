@@ -4,8 +4,10 @@ const sendForm = () => {
       successMessage = 'Спасибо! Мы скоро с вами свяжемся',
       form = document.querySelectorAll('form'),
       statusMessage = document.createElement('div'),
-      popup = document.querySelector('.popup'),
-      thanks = document.getElementById('thanks');
+      popup = document.querySelectorAll('.popup'),
+      thanks = document.getElementById('thanks'),
+      freeVisitForm = document.querySelector('#free_visit_form'),
+      callbackForm = document.querySelector('#callback_form');
 
       statusMessage.classList.add('status-message');
 
@@ -28,10 +30,19 @@ const sendForm = () => {
                throw new Error('status networking not 200');
             } else {
                statusMessage.textContent = successMessage;
+               setTimeout(() => {
+                  statusMessage.textContent = '';
+                  popup.forEach(elem => elem.style.display = 'none');
+               }, 2000);
             }
+
          })
          .catch((error) => {
             statusMessage.textContent = errorMessage;
+            setTimeout(() => {
+               statusMessage.textContent = '';
+               popup.forEach(elem => elem.style.display = 'none');
+            }, 2000);
          });
          elem.reset();
       });

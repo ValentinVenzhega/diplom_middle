@@ -56,7 +56,6 @@ const validForm = () => {
                validateElem(elem);
             });
          }
-        
       }
       item.addEventListener('submit', (event) => {
          event.preventDefault();
@@ -69,8 +68,6 @@ const validForm = () => {
          }
       });
    });
-
-
 };
 
 export default validForm;

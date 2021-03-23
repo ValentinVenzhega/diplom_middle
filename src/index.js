@@ -5,12 +5,10 @@ import togglePopup from './modules/togglePopup';
 import toggleMenu from './modules/toggleMenu';
 import validForm from './modules/validForm';
 import scrollBlock from './modules/scrollBlock';
-// import sendForm from './modules/sendForm';
+import sendForm from './modules/sendForm';
 import mainSlider from './modules/mainSlider';
 import gallerySlider from './modules/gallerySlider';
 import servicesSlider from './modules/servicesSlider';
-
-
 
 
 // выбор клуба
@@ -29,7 +27,7 @@ validForm();
 scrollBlock();
 
 // отправка форм
-// sendForm();
+sendForm();
 
 // главнй слайдер
 mainSlider();

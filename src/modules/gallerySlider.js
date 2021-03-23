@@ -37,7 +37,6 @@ const gallerySlider = () => {
       event.preventDefault();
 
       const target = event.target;
-      console.log(target);
       prevSlide(slide, currentSlide);
 
       if (target.closest('#arrow-right')) {
