@@ -2279,6 +2279,11 @@ p.personal-data input[type=checkbox]:checked+label:before {
    background-color: #fff
 }
 
+.status-message {
+   padding-top: 10px;
+   color: #ffffff;
+}
+
 #thanks .form-content p {
    font-size: 20px;
    width: 90%;

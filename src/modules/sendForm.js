@@ -1,7 +1,6 @@
 const sendForm = () => {
 
    const errorMessage = 'Что-то пошло не так',
-      successMessage = 'Спасибо! Мы скоро с вами свяжемся',
       form = document.querySelectorAll('form'),
       statusMessage = document.createElement('div'),
       popup = document.querySelectorAll('.popup'),
@@ -9,7 +8,7 @@ const sendForm = () => {
       freeVisitForm = document.querySelector('#free_visit_form'),
       callbackForm = document.querySelector('#callback_form');
 
-      statusMessage.classList.add('status-message');
+   statusMessage.classList.add('status-message');
 
    form.forEach (elem => {
       elem.addEventListener('submit', (event) => {
@@ -29,10 +28,11 @@ const sendForm = () => {
             if (response.status !== 200) {
                throw new Error('status networking not 200');
             } else {
-               statusMessage.textContent = successMessage;
+               statusMessage.textContent = '';
+               thanks.style.display = 'block';
                setTimeout(() => {
-                  statusMessage.textContent = '';
                   popup.forEach(elem => elem.style.display = 'none');
+                  thanks.style.display = 'none';
                }, 2000);
             }
 
