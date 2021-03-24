@@ -1635,6 +1635,10 @@ nav.popup-menu .close-menu-btn img {
    width: 100%
 }
 
+#gallery .gallery-slider .slide-active {
+   display: flex;
+}
+
 .slider-arrow {
    position: absolute;
    top: 50%;
@@ -1666,6 +1670,31 @@ nav.popup-menu .close-menu-btn img {
    margin-left: -65px;
    bottom: 5%
 }
+
+.gallery-line {
+   position: absolute;
+   bottom: 20px;
+   width: 82%;
+   margin: 20px auto 0;
+   display: flex;
+   justify-content: center;
+   z-index: 5;
+}
+
+.gallery-line .line {
+   cursor: pointer;
+   height: 7px;
+   width: 30px;
+   margin: 0 10px;
+   background-color: #ffffffea;
+   display: inline-block;
+   transition: background-color,transform .4s,-webkit-transform .4s;
+}
+
+.gallery-line .line-active {
+   background-color: #f4c71b;
+}
+
 
 #cards {
    padding-bottom: 4rem
