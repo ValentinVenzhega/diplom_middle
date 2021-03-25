@@ -26,10 +26,8 @@ const validForm = () => {
          item.addEventListener('click', () => {
             if (item.checked) {
                button.forEach(elem => elem.disabled = false);
-               console.log('ok');
             } else {
                button.forEach(elem => elem.disabled = true);
-               console.log('no');
             }
          });
       });
