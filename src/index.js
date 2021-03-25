@@ -9,7 +9,7 @@ import sendForm from './modules/sendForm';
 import mainSlider from './modules/mainSlider';
 import gallerySlider from './modules/gallerySlider';
 import servicesSlider from './modules/servicesSlider';
-import culc from './modules/culc';
+import calc from './modules/calc';
 
 
 
@@ -41,4 +41,4 @@ gallerySlider();
 servicesSlider();
 
 // калькулятор
-culc();
+calc();
