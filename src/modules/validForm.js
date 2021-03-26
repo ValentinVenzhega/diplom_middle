@@ -1,38 +1,10 @@
 const validForm = () => {
    const form = document.querySelectorAll('form'),
-      checkbox = document.querySelectorAll('input[type="checkbox"]'),
-      footerForm = document.querySelector('#footer_form'),
-      radios = footerForm.querySelectorAll('input[type="radio"]'),
-      button = document.querySelectorAll('button[type="submit"]'),
-      footerBtn = document.querySelector('.callback-btn-footer'),
+
       regName = /^[А-Яа-я ]{2,20}$/,
       regPhone = /^(8|\+7)([0-9]{9,10})$/;
 
-      button.forEach(elem => elem.disabled = true);
-
-      // проверка выбран ли хоть один клуб
-      radios.forEach(item => {
-         item.addEventListener('click', function() {
-            for (let radio of radios) {
-               if (radio.checked) {
-                  footerBtn.disabled = false;
-               }
-            }
-         });
-      });
-      
-      // проверка нажат ли чекбокс
-      checkbox.forEach(item => {
-         item.addEventListener('click', () => {
-            if (item.checked) {
-               button.forEach(elem => elem.disabled = false);
-            } else {
-               button.forEach(elem => elem.disabled = true);
-            }
-         });
-      });
-   
-      // переводим каждое слово с большой буквы
+   // переводим каждое слово с большой буквы
    const substr = (elem) => {
       let words = elem.value.split(' ');
       
