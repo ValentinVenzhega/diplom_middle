@@ -10,7 +10,7 @@ const mainSlider = () => {
    };
 
    const nextSlide = (elem, index) => {
-      elem[index].style.display = 'block';
+      elem[index].style.display = 'flex';
    };
 
    const autoPlaySlide = () => {
