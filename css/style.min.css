@@ -1561,7 +1561,7 @@ nav.popup-menu .close-menu-btn img {
    margin: 0 auto;
    padding-left: 15px;
    padding-right: 15px;
-   transition: 250ms;
+   transition: all .5s ease;
 }
 
 .services-slider .slide {
@@ -1633,17 +1633,23 @@ nav.popup-menu .close-menu-btn img {
    padding-right: 75px;
    max-width: 900px;
    margin: 0 auto;
-   text-align: center
+   text-align: center;
+   height: 390px;
 }
 
 #gallery .gallery-slider .slide {
-   display: none;
+   /* display: none; */
+   display: flex;
+   opacity: 0;
+   transition: opacity 1s ease .5s;
    margin: 0 auto !important;
-   width: 100%
+   width: 100%;
+   position: absolute;
 }
 
 #gallery .gallery-slider .slide-active {
-   display: flex;
+   opacity: 1;
+   transition: opacity 1s ease .5s;
 }
 
 .slider-arrow {
