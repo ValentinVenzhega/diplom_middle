@@ -29,7 +29,11 @@ validForm();
 scrollBlock();
 
 // отправка форм
-sendForm();
+sendForm('banner-form','check1');
+sendForm('footer_form',false);
+sendForm('form1','check');
+sendForm('form2','check2');
+sendForm('card_order','card_check');
 
 // главнй слайдер
 mainSlider();

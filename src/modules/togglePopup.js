@@ -3,7 +3,9 @@ const togglePopup = () =>  {
       freeVisitForm = document.querySelector('#free_visit_form'),
       callbackForm = document.querySelector('#callback_form'),
       giftModal = document.querySelector('#gift'),
-      thanks = document.getElementById('thanks');
+      thanks = document.querySelector('#thanks'),
+      visitForm = document.querySelector('form[name="free-visit-form"]'),
+      formCallback = document.querySelector('form[name="callback-form"]');
    
    window.addEventListener('click', (event) => {
       const target = event.target;
@@ -11,39 +13,31 @@ const togglePopup = () =>  {
       // записаться на визит
       if (target.closest('.open-popup')) {
          freeVisitForm.style.display = 'block';
-      } else if (target.closest('.close-form')) {
+      } else if (target.closest('.close-form') || !target.closest('#form2')) {
          freeVisitForm.style.display = 'none';
-      } else if (!target.closest('#form2')) {
-         freeVisitForm.style.display = 'none';
+         visitForm.reset();
       }
 
       // перезвони мне
       if (target.closest('.callback-btn')) {
          callbackForm.style.display = 'block';
-      } else if (target.closest('.close_icon')) {
+      } else if (target.closest('.close_icon') || !target.closest('#form1')) {
          callbackForm.style.display = 'none';
-      } else if (!target.closest('#form1')) {
-         callbackForm.style.display = 'none';
+         formCallback.reset();
       }
 
       // подарок
       if (target.closest('.fixed-gift')) {
          giftModal.style.display = 'block';
          fixedGift.style.display = 'none';
-      } else if (target.closest('#gift>.close_icon')) {
-         giftModal.style.display = 'none';
-      } else if (target.closest('.close-btn')) {
-         giftModal.style.display = 'none';
-      } else if (!target.closest('.form-content')) {
+      } else if (target.closest('#gift>.close_icon') || target.closest('.close-btn') || 
+         !target.closest('.form-content')) {
          giftModal.style.display = 'none';
       }
 
       // спасибо за заявку
-      if (target.closest('#thanks .sloce-icon')) {
-         thanks.style.display = 'none';
-      }else if (!target.closest('#thanks .form-content')) {
-         thanks.style.display = 'none';
-      } else if (target.closest('#thanks .close-btn')) {
+      if (target.closest('#thanks .sloce-icon') || !target.closest('#thanks .form-content') || 
+         target.closest('#thanks .close-btn')) {
          thanks.style.display = 'none';
       }
    });

@@ -2175,7 +2175,7 @@ footer .footer-bottom .right .socials .social-icon:hover a {
    text-align: center;
    z-index: 1210;
    width: 340px;
-   height: 315px;
+   min-height: 315px;
    background-color: #1e1c34;
    margin: 0 auto;
    text-align: center

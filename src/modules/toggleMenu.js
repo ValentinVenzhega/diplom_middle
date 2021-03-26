@@ -32,7 +32,7 @@ const toggleMenu = () => {
       `;
       document.head.appendChild(style);
    }
-
+   
    window.addEventListener('scroll', (event) => {
       if (window.pageYOffset > positionStart) {
          topMenu.classList.add("position");
