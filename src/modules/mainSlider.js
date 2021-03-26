@@ -6,11 +6,17 @@ const mainSlider = () => {
       interval;
       
    const prevSlide = (elem, index) => {
-      elem[index].style.display = 'none';
+      elem[index].style.cssText= `
+      opacity: 0;
+      transition: opacity 1s;
+      `;
    };
 
    const nextSlide = (elem, index) => {
-      elem[index].style.display = 'flex';
+      elem[index].style.cssText= `
+      opacity: 1;
+      transition: opacity 1s;
+      `;
    };
 
    const autoPlaySlide = () => {

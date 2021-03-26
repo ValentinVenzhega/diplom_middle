@@ -1298,7 +1298,9 @@ nav.popup-menu .close-menu-btn img {
 }
 
 .main-slider .slide {
-   position: relative;
+   position: absolute;
+   opacity: 0;
+   transition: opacity 1s ease .5s;
    display: -moz-flex;
    display: -ms-flex;
    display: -o-flex;
@@ -1306,6 +1308,11 @@ nav.popup-menu .close-menu-btn img {
    display: -ms-flexbox;
    display: flex;
    height: 100%
+}
+
+.main-slider .slide:first-child {
+   opacity: 1;
+   transition: opacity 1s ease .5s;
 }
 
 .main-slider .slide .slide-text {
