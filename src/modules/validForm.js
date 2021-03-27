@@ -40,6 +40,7 @@ const validForm = () => {
          if (!regPhone.test(elem.value)) {
             elem.style.border = '3px solid red';
             elem.value = '';
+            alert('ввел менее 7 или более 11 символов');
          } else {
             validInput(elem);
             elem.style.border = '3px solid green';
