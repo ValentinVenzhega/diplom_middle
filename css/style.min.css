@@ -1024,6 +1024,10 @@ header .head .club-select .clubs-list ul {
    text-align: center
 }
 
+header .head .club-select .clubs-list ul.list-active {
+   display: block;
+}
+
 header .head .club-select .clubs-list ul li a {
    color: #ffd11a;
    font-size: 12px;
