@@ -1649,7 +1649,7 @@ nav.popup-menu .close-menu-btn img {
 
 #gallery .gallery-slider .slide-active {
    opacity: 1;
-   transition: opacity 1s ease .5s;
+   transition: opacity .5s;
 }
 
 .slider-arrow {
