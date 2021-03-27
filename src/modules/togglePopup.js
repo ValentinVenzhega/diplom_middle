@@ -13,7 +13,7 @@ const togglePopup = () =>  {
       // записаться на визит
       if (target.closest('.open-popup')) {
          freeVisitForm.style.display = 'block';
-      } else if (target.closest('.close-form') || !target.closest('#form2')) {
+      } else if (target.closest('.open-popup>.close-form') || !target.closest('#form2')) {
          freeVisitForm.style.display = 'none';
          visitForm.reset();
       }
@@ -21,7 +21,7 @@ const togglePopup = () =>  {
       // перезвони мне
       if (target.closest('.callback-btn')) {
          callbackForm.style.display = 'block';
-      } else if (target.closest('.close_icon') || !target.closest('#form1')) {
+      } else if (target.closest('.callback-btn .close_icon') || !target.closest('#form1')) {
          callbackForm.style.display = 'none';
          formCallback.reset();
       }
@@ -30,8 +30,7 @@ const togglePopup = () =>  {
       if (target.closest('.fixed-gift')) {
          giftModal.style.display = 'block';
          fixedGift.style.display = 'none';
-      } else if (target.closest('#gift>.close_icon') || target.closest('.close-btn') || 
-         !target.closest('.form-content')) {
+      } else if (target.closest('#gift .close_icon') || target.closest('#gift .close-btn')) {
          giftModal.style.display = 'none';
       }
 
