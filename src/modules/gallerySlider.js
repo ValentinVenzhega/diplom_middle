@@ -21,8 +21,9 @@ const gallerySlider = () => {
       li.className = 'line';
       galleryLine.append(li);
    }
+   
    let line = document.querySelectorAll('.line');
-
+   line[currentSlide].classList.add('line-active');
    // автопроигрывание слайдов
    const autoPlaySlide = () => {
       prevSlide(slide, currentSlide, 'slide-active');
@@ -46,11 +47,6 @@ const gallerySlider = () => {
    // переход слайда по клику
    slider.addEventListener('click', (event) => {
       event.preventDefault();
-
-      // if (!target.matches('.gallery-btn, .line')) {
-      //    return;
-      // }
-
       const target = event.target;
       prevSlide(slide, currentSlide, 'slide-active');
       prevSlide(line, currentSlide, 'line-active');
