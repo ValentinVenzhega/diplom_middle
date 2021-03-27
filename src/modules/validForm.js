@@ -30,6 +30,7 @@ const validForm = () => {
          if (!regName.test(elem.value)) {
             elem.style.border = '3px solid red';
             elem.value = '';
+            alert('введите имя на русском языке');
          } else {
             substr(elem);
             validInput(elem);
@@ -40,7 +41,7 @@ const validForm = () => {
          if (!regPhone.test(elem.value)) {
             elem.style.border = '3px solid red';
             elem.value = '';
-            alert('ввел менее 7 или более 11 символов');
+            alert('ввел менее 7 или более 11 цифр');
          } else {
             validInput(elem);
             elem.style.border = '3px solid green';
@@ -52,7 +53,7 @@ const validForm = () => {
    form.forEach(item => {
       for (let elem of item.elements) {
          if (elem.tagName !== 'BUTTON') {
-            elem.addEventListener('blur', () => {
+            elem.addEventListener('input', () => {
                validateElem(elem);
             });
          }
