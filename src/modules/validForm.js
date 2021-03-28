@@ -1,8 +1,10 @@
 const validForm = () => {
+
    const form = document.querySelectorAll('form'),
 
-      regName = /^[А-Яа-я ]{2,20}$/,
-      regPhone = /^(8|\+7)([0-9]{9,10})$/;
+      regName = /^[А-Яа-я ]{1,20}$/,
+      // regPhone = /^(8|\+7)([0-9])$/,
+      regPhone1 = /^[\d\+]+$/;
 
    // переводим каждое слово с большой буквы
    const substr = (elem) => {
@@ -30,21 +32,23 @@ const validForm = () => {
          if (!regName.test(elem.value)) {
             elem.style.border = '3px solid red';
             elem.value = '';
-            alert('введите имя на русском языке');
+            // alert('введите имя на русском языке');
          } else {
             substr(elem);
             validInput(elem);
+            elem.value = elem.value.slice(0,10);
             elem.style.border = '3px solid green';
          }
       }
       if (elem.name === 'phone' && elem.value !== '') {
-         if (!regPhone.test(elem.value)) {
+         if (!regPhone1.test(elem.value) || elem.value[0] !== '8' && elem.value[0] !== '7' || elem.value.length > 12 || elem.value.length < 7) {
             elem.style.border = '3px solid red';
             elem.value = '';
-            alert('ввел менее 7 или более 11 цифр');
+            // alert('ввел менее 7 или более 11 цифр');
          } else {
             validInput(elem);
             elem.style.border = '3px solid green';
+            // elem.value = elem.value.slice(2,10);
          }
       }
    };
@@ -54,6 +58,7 @@ const validForm = () => {
       for (let elem of item.elements) {
          if (elem.tagName !== 'BUTTON') {
             elem.addEventListener('input', () => {
+               
                validateElem(elem);
             });
          }

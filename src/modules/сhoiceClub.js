@@ -7,10 +7,10 @@ const choiceClub = () =>  {
       if (target.closest('.club-select')) {
          listClub.classList.toggle('list-active');
          
-      } else if (!target.closest('ul')) {
+      } else if (!target.closest('.left ul')) {
          listClub.classList.remove('list-active');
       }
-      if (target.closest('ul')) {
+      if (target.closest('.left ul')) {
          listClub.classList.add('list-active');
       }
    });
