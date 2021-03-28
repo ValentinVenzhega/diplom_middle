@@ -1,7 +1,6 @@
 const validForm = () => {
 
    const form = document.querySelectorAll('form'),
-
       regName = /^[А-Яа-я ]{1,20}$/,
       // regPhone = /^(8|\+7)([0-9])$/,
       regPhone1 = /^[0-9]+$/;
