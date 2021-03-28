@@ -1,9 +1,9 @@
 const validForm = () => {
 
    const form = document.querySelectorAll('form'),
-      regName = /^[А-Яа-я ]{1,20}$/,
+      regName = /^[А-Яа-я/ ]{1,20}$/,
       // regPhone = /^(8|\+7)([0-9])$/,
-      regPhone1 = /^[0-9]+$/;
+      regPhone1 = /^[0-9\+ ]{1,12}$/;
 
    // переводим каждое слово с большой буквы
    const substr = (elem) => {
@@ -19,10 +19,11 @@ const validForm = () => {
    };
 
    const validInput = (elem) => {
-      elem.value = elem.value.replace(/-{2,}/g, '-');
+      // elem.value = elem.value.replace(/-{2,}/g, '-');
       elem.value = elem.value.replace(/\s{2,}/g, ' ');
-      elem.value = elem.value.replace(/^[ \s]+|[ \s]+$/, '');
-      elem.value = elem.value.replace(/^[/-]+|[/-]+$/, '');
+      elem.value = elem.value.replace(/\+{2,}/g, '+');
+      elem.value = elem.value.replace(/^[ \s]+|[ \s]+$/, ' ');
+      elem.value = elem.value.replace(/^[\+]+|[\+]+$/, '+');
    };
 
    // валидация инпутов
@@ -34,7 +35,6 @@ const validForm = () => {
          } else {
             substr(elem);
             validInput(elem);
-            elem.value = elem.value.slice(0,10);
             elem.style.border = '3px solid green';
          }
       }
@@ -42,8 +42,9 @@ const validForm = () => {
          if (!regPhone1.test(elem.value)) {
             elem.style.border = '3px solid red';
             elem.value = '';
-         } else if (elem.value[0] !== '8' && elem.value[0] !== '7' || elem.value.length < 7 || elem.value.length > 11) {
+         } else if (elem.value[0] !== '8' && elem.value[0] !== '+' || elem.value.length < 7 || elem.value.length > 12) {
             elem.style.border = '3px solid red';
+            validInput(elem);
          } else {
             validInput(elem);
             elem.style.border = '3px solid green';
